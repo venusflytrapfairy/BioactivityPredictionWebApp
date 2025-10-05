@@ -6,6 +6,11 @@ import os
 import base64
 import pickle
 
+if pd.__version__ != "1.5.3":
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas==1.5.3"])
+    import importlib
+    importlib.reload(pd)
+    
 # Molecular descriptor calculator
 def desc_calc():
     # Performs the descriptor calculation
